@@ -29,5 +29,5 @@
   <p>Disclaimer:</p>
 </h3>
 <h4>
-  <p>The following product was made using UiPath Studio. It is not a direct representation of UiPath Studio or UiPath Studios employees. It is merely a test product made by some random batchmates in the Revature training program. Any errors in usage are the sole responsibility of the user themselves. Please use responsibly!</p> 
+  <p>The following product was made using UiPath Studio. It is not a direct representation of UiPath Studio or UiPath Studio's employees. It is merely a test product made by some random batchmates in the Revature training program. Any errors in usage are the sole responsibility of the user themselves. Please use responsibly!</p> 
 </h4>
