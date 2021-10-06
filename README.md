@@ -1,4 +1,4 @@
-# Embrey_J-P0
+# Embrey_J_Krasner_A-P0
 
 <h1>
   <b><p>Hello and allow me to introduce you to RoSA, a personal Robot Shopping Assistant.<p></b>
