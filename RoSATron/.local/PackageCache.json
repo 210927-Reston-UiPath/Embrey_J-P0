@@ -10,10 +10,10 @@
         "C:\\Users\\JP\\.nuget\\packages\\csvhelper/2.13.5\\lib/net40-client/CsvHelper.dll",
         "C:\\Users\\JP\\.nuget\\packages\\documentformat.openxml/2.5.0\\lib/DocumentFormat.OpenXml.dll",
         "C:\\Users\\JP\\.nuget\\packages\\microsoft.visualstudio.ole.interop/7.10.6071\\lib/Microsoft.VisualStudio.OLE.Interop.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
         "C:\\Users\\JP\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OOXML.dll",
         "C:\\Users\\JP\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXml4Net.dll",
         "C:\\Users\\JP\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.OpenXmlFormats.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\npoi/2.4.1\\lib/net45/NPOI.dll",
         "C:\\Users\\JP\\.nuget\\packages\\sharpziplib/1.2.0\\lib/net45/ICSharpCode.SharpZipLib.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.excel.activities/2.9.5\\lib/net461/UiPath.Excel.Activities.Design.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.excel.activities/2.9.5\\lib/net461/UiPath.Excel.Activities.dll",
@@ -28,10 +28,10 @@
       },
       "Assemblies": [
         "C:\\Users\\JP\\.nuget\\packages\\bouncycastle/1.8.5\\lib/BouncyCastle.Crypto.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.PlatformServices.dll",
         "C:\\Users\\JP\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.PlatformServices.dll",
         "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.PlatformServices.dll",
         "C:\\Users\\JP\\.nuget\\packages\\google.apis.calendar.v3/1.43.0.1872\\lib/net45/Google.Apis.Calendar.v3.dll",
         "C:\\Users\\JP\\.nuget\\packages\\google.apis.core/1.43.0\\lib/net45/Google.Apis.Core.dll",
         "C:\\Users\\JP\\.nuget\\packages\\google.apis.gmail.v1/1.43.0.1859\\lib/net45/Google.Apis.Gmail.v1.dll",
@@ -117,10 +117,10 @@
         "C:\\Users\\JP\\.nuget\\packages\\aforge.imaging/2.2.5\\lib/AForge.Imaging.dll",
         "C:\\Users\\JP\\.nuget\\packages\\aforge.math/2.2.5\\lib/AForge.Math.dll",
         "C:\\Users\\JP\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit/3.8.1\\lib/net40/Xceed.Wpf.Toolkit.dll",
         "C:\\Users\\JP\\.nuget\\packages\\humanizer.core/2.4.2\\lib/netstandard2.0/Humanizer.dll",
         "C:\\Users\\JP\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
@@ -151,51 +151,21 @@
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.CV.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.CV.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UIAutomation.Activities.Design.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UiAutomation.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UIAutomationCore.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UIAutomationNext.Activities.Design.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UIAutomationNext.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UIAutomationNext.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.UiAutomation.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities/20.10.9\\lib/net461/UiPath.Wizards.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.AzureComputerVision.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.Core.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.GoogleCloud.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.Microsoft.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.MicrosoftCloud.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.Tesseract.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.dll"
+        "C:\\Users\\JP\\.nuget\\packages\\uipath.vision/2.2.0\\lib/net461/UiPath.Vision.Tesseract.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9"
-    },
-    {
-      "Package": {
-        "Id": "UiPath.GSuite.Activities",
-        "Version": "1.11.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.PlatformServices.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.PlatformServices.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.calendar.v3/1.43.0.1872\\lib/net45/Google.Apis.Calendar.v3.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.core/1.43.0\\lib/net45/Google.Apis.Core.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.docs.v1/1.43.0.1869\\lib/net45/Google.Apis.Docs.v1.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.drive.v3/1.43.0.1863\\lib/net45/Google.Apis.Drive.v3.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.gmail.v1/1.43.0.1859\\lib/net45/Google.Apis.Gmail.v1.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.script.v1/1.43.0.1871\\lib/net45/Google.Apis.Script.v1.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.sheets.v4/1.43.0.1867\\lib/net45/Google.Apis.Sheets.v4.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\mimekit/2.10.0\\lib/net46/MimeKit.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\nodatime/2.4.7\\lib/net45/NodaTime.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\portable.bouncycastle/1.8.8\\lib/net40/BouncyCastle.Crypto.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\system.buffers/4.5.1\\lib/net461/System.Buffers.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities/1.11.0\\lib/net461/UiPath.GSuite.Activities.Design.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities/1.11.0\\lib/net461/UiPath.GSuite.Activities.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities/1.11.0\\lib/net461/UiPath.GSuite.Activities.Package.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities/1.11.0\\lib/net461/UiPath.GSuite.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities/1.11.0\\lib/net461/UiPath.Orchestrator.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0"
     }
   ],
   "Conflicts": [],
@@ -316,34 +286,6 @@
         }
       ]
     },
-    "Google.Apis.Docs.v1": {
-      "Id": "Google.Apis.Docs.v1",
-      "Version": "1.43.0.1869",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis",
-          "Item2": "[1.43.0, )"
-        },
-        {
-          "Item1": "Google.Apis.Auth",
-          "Item2": "[1.43.0, )"
-        }
-      ]
-    },
-    "Google.Apis.Drive.v3": {
-      "Id": "Google.Apis.Drive.v3",
-      "Version": "1.43.0.1863",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis",
-          "Item2": "[1.43.0, )"
-        },
-        {
-          "Item1": "Google.Apis.Auth",
-          "Item2": "[1.43.0, )"
-        }
-      ]
-    },
     "Google.Apis.Gmail.v1": {
       "Id": "Google.Apis.Gmail.v1",
       "Version": "1.43.0.1859",
@@ -361,34 +303,6 @@
     "Google.Apis.PeopleService.v1": {
       "Id": "Google.Apis.PeopleService.v1",
       "Version": "1.43.0.1876",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis",
-          "Item2": "[1.43.0, )"
-        },
-        {
-          "Item1": "Google.Apis.Auth",
-          "Item2": "[1.43.0, )"
-        }
-      ]
-    },
-    "Google.Apis.Script.v1": {
-      "Id": "Google.Apis.Script.v1",
-      "Version": "1.43.0.1871",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis",
-          "Item2": "[1.43.0, )"
-        },
-        {
-          "Item1": "Google.Apis.Auth",
-          "Item2": "[1.43.0, )"
-        }
-      ]
-    },
-    "Google.Apis.Sheets.v4": {
-      "Id": "Google.Apis.Sheets.v4",
-      "Version": "1.43.0.1867",
       "Dependencies": [
         {
           "Item1": "Google.Apis",
@@ -699,24 +613,6 @@
       "Version": "7.10.6071",
       "Dependencies": []
     },
-    "MimeKit": {
-      "Id": "MimeKit",
-      "Version": "2.10.0",
-      "Dependencies": [
-        {
-          "Item1": "System.Data.DataSetExtensions",
-          "Item2": "[4.5.0, )"
-        },
-        {
-          "Item1": "System.Buffers",
-          "Item2": "[4.5.1, )"
-        },
-        {
-          "Item1": "Portable.BouncyCastle",
-          "Item2": "[1.8.8, )"
-        }
-      ]
-    },
     "Newtonsoft.Json": {
       "Id": "Newtonsoft.Json",
       "Version": "11.0.2",
@@ -725,11 +621,6 @@
     "NLog": {
       "Id": "NLog",
       "Version": "4.5.11",
-      "Dependencies": []
-    },
-    "NodaTime": {
-      "Id": "NodaTime",
-      "Version": "2.4.7",
       "Dependencies": []
     },
     "NPOI": {
@@ -741,11 +632,6 @@
           "Item2": "[1.0.0, )"
         }
       ]
-    },
-    "Portable.BouncyCastle": {
-      "Id": "Portable.BouncyCastle",
-      "Version": "1.8.8",
-      "Dependencies": []
     },
     "SharpZipLib": {
       "Id": "SharpZipLib",
@@ -765,11 +651,6 @@
     "System.ComponentModel.Annotations": {
       "Id": "System.ComponentModel.Annotations",
       "Version": "4.7.0",
-      "Dependencies": []
-    },
-    "System.Data.DataSetExtensions": {
-      "Id": "System.Data.DataSetExtensions",
-      "Version": "4.5.0",
       "Dependencies": []
     },
     "System.IO.Abstractions": {
@@ -933,52 +814,6 @@
         {
           "Item1": "SharpZipLib",
           "Item2": "[1.0.0, )"
-        }
-      ]
-    },
-    "UiPath.GSuite.Activities": {
-      "Id": "UiPath.GSuite.Activities",
-      "Version": "1.11.0",
-      "Dependencies": [
-        {
-          "Item1": "Google.Apis.Calendar.v3",
-          "Item2": "[1.43.0.1872, )"
-        },
-        {
-          "Item1": "Google.Apis.Docs.v1",
-          "Item2": "[1.43.0.1869, )"
-        },
-        {
-          "Item1": "Google.Apis.Drive.v3",
-          "Item2": "[1.43.0.1863, )"
-        },
-        {
-          "Item1": "Google.Apis.Gmail.v1",
-          "Item2": "[1.43.0.1859, )"
-        },
-        {
-          "Item1": "Google.Apis.PeopleService.V1",
-          "Item2": "[1.43.0.1876, )"
-        },
-        {
-          "Item1": "Google.Apis.Script.v1",
-          "Item2": "[1.43.0.1871, )"
-        },
-        {
-          "Item1": "Google.Apis.Sheets.v4",
-          "Item2": "[1.43.0.1867, )"
-        },
-        {
-          "Item1": "MimeKit",
-          "Item2": "[2.10.0, )"
-        },
-        {
-          "Item1": "Newtonsoft.Json",
-          "Item2": "[11.0.1, )"
-        },
-        {
-          "Item1": "NodaTime",
-          "Item2": "[2.4.7, )"
         }
       ]
     },
@@ -1305,10 +1140,10 @@
         "Version": "3.8.1"
       },
       "Assemblies": [
+        "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.Aero.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.Metro.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.AvalonDock.dll",
         "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1\\lib\\net40\\Xceed.Wpf.Toolkit.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\extended.wpf.toolkit\\3.8.1"
@@ -1319,8 +1154,8 @@
         "Version": "1.43.0"
       },
       "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.PlatformServices.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.dll"
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.PlatformServices.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis\\1.43.0"
     },
@@ -1330,8 +1165,8 @@
         "Version": "1.43.0"
       },
       "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.PlatformServices.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.dll"
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.PlatformServices.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.auth\\1.43.0"
     },
@@ -1357,26 +1192,6 @@
     },
     {
       "Package": {
-        "Id": "Google.Apis.Docs.v1",
-        "Version": "1.43.0.1869"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.docs.v1\\1.43.0.1869\\lib\\net45\\Google.Apis.Docs.v1.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.docs.v1\\1.43.0.1869"
-    },
-    {
-      "Package": {
-        "Id": "Google.Apis.Drive.v3",
-        "Version": "1.43.0.1863"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.drive.v3\\1.43.0.1863\\lib\\net45\\Google.Apis.Drive.v3.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.drive.v3\\1.43.0.1863"
-    },
-    {
-      "Package": {
         "Id": "Google.Apis.Gmail.v1",
         "Version": "1.43.0.1859"
       },
@@ -1394,26 +1209,6 @@
         "C:\\Users\\JP\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876\\lib\\net45\\Google.Apis.PeopleService.v1.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876"
-    },
-    {
-      "Package": {
-        "Id": "Google.Apis.Script.v1",
-        "Version": "1.43.0.1871"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.script.v1\\1.43.0.1871\\lib\\net45\\Google.Apis.Script.v1.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.script.v1\\1.43.0.1871"
-    },
-    {
-      "Package": {
-        "Id": "Google.Apis.Sheets.v4",
-        "Version": "1.43.0.1867"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\google.apis.sheets.v4\\1.43.0.1867\\lib\\net45\\Google.Apis.Sheets.v4.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\google.apis.sheets.v4\\1.43.0.1867"
     },
     {
       "Package": {
@@ -1668,16 +1463,6 @@
     },
     {
       "Package": {
-        "Id": "MimeKit",
-        "Version": "2.10.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\mimekit\\2.10.0\\lib\\net46\\MimeKit.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\mimekit\\2.10.0"
-    },
-    {
-      "Package": {
         "Id": "Newtonsoft.Json",
         "Version": "11.0.2"
       },
@@ -1698,36 +1483,16 @@
     },
     {
       "Package": {
-        "Id": "NodaTime",
-        "Version": "2.4.7"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\nodatime\\2.4.7\\lib\\net45\\NodaTime.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\nodatime\\2.4.7"
-    },
-    {
-      "Package": {
         "Id": "NPOI",
         "Version": "2.4.1"
       },
       "Assemblies": [
+        "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.dll",
         "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OOXML.dll",
         "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXml4Net.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXmlFormats.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.dll"
+        "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1\\lib\\net45\\NPOI.OpenXmlFormats.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\npoi\\2.4.1"
-    },
-    {
-      "Package": {
-        "Id": "Portable.BouncyCastle",
-        "Version": "1.8.8"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\lib\\net40\\BouncyCastle.Crypto.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\portable.bouncycastle\\1.8.8"
     },
     {
       "Package": {
@@ -1768,16 +1533,6 @@
         "C:\\Users\\JP\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\lib\\net461\\System.ComponentModel.Annotations.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0"
-    },
-    {
-      "Package": {
-        "Id": "System.Data.DataSetExtensions",
-        "Version": "4.5.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\lib\\net45\\_._"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\system.data.datasetextensions\\4.5.0"
     },
     {
       "Package": {
@@ -1913,20 +1668,6 @@
     },
     {
       "Package": {
-        "Id": "UiPath.GSuite.Activities",
-        "Version": "1.11.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0\\lib\\net461\\UiPath.GSuite.Activities.Design.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0\\lib\\net461\\UiPath.GSuite.Activities.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0\\lib\\net461\\UiPath.GSuite.Activities.Package.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0\\lib\\net461\\UiPath.GSuite.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0\\lib\\net461\\UiPath.Orchestrator.dll"
-      ],
-      "Path": "C:\\Users\\JP\\.nuget\\packages\\uipath.gsuite.activities\\1.11.0"
-    },
-    {
-      "Package": {
         "Id": "UiPath.Mail.Activities",
         "Version": "1.9.5"
       },
@@ -2024,11 +1765,11 @@
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.CV.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.CV.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UIAutomation.Activities.Design.dll",
+        "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UiAutomation.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UIAutomationCore.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UIAutomationNext.Activities.Design.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UIAutomationNext.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UIAutomationNext.dll",
-        "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.UiAutomation.Activities.dll",
         "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9\\lib\\net461\\UiPath.Wizards.dll"
       ],
       "Path": "C:\\Users\\JP\\.nuget\\packages\\uipath.uiautomation.activities\\20.10.9"
