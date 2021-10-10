@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Welcome" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,5764" sap2010:WorkflowViewState.IdRef="Welcome_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Welcome" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1173,7461" sap2010:WorkflowViewState.IdRef="Welcome_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -64,35 +64,33 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Welcome" sap:VirtualizedContainerService.HintSize="1142,5699" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Welcome" sap:VirtualizedContainerService.HintSize="1142,7396" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="userName" />
       <Variable x:TypeArguments="sd:DataTable" Name="ExcelData" />
-      <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="x:String" Name="strName" />
       <Variable x:TypeArguments="x:String" Name="prodPurchase" />
+      <Variable x:TypeArguments="x:String" Name="strEmail" />
+      <Variable x:TypeArguments="x:String" Name="userEmail" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1100,242" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Hello, I am RoSA, your personal shopping assistant! Please enter your first name:" Title="Enter Name">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1100,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Hello, I am RoSA, your personal shopping assistant! Please enter your first name:" Title="Enter Name">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[userName]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1100,238" sap2010:WorkflowViewState.IdRef="InputDialog_21" IsPassword="False" Label="[&quot;Hello &quot; + userName + &quot;, please enter your email address:&quot;]" Title="Enter Email">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[userEmail]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1100,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strID]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">1</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strName]</OutArgument>
@@ -101,16 +99,24 @@
               <InArgument x:TypeArguments="x:String">[userName]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strEmail]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[userEmail]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1100,5156" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="ExcelData\RoSATarget.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1100,6579" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="ExcelData\RoSATarget.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1066,5047" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1066,6470" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtVendors" />
               <Variable x:TypeArguments="sd:DataTable" Name="dtExpenses" />
@@ -129,15 +135,15 @@
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strID,strName}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1024,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{strName,strEmail}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1024,22" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
             <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[ExcelData]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1024,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="Clients" />
-            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1024,242" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;Hello &quot; + userName + &quot;! Which store would you like to visit? 1 for Food, 2 for Entertainment, and 3 for Technology&quot;]" Title="Select Store">
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="1024,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="[&quot;Hello &quot; + userName + &quot;! Which store would you like to visit? 1 for Food, 2 for Entertainment, and 3 for Technology&quot;]" Title="Select Store">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:Int32">[vendLocate]</OutArgument>
               </ui:InputDialog.Result>
             </ui:InputDialog>
-            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[vendLocate]" sap:VirtualizedContainerService.HintSize="1024,4385" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-              <Sequence x:Key="1" sap:VirtualizedContainerService.HintSize="984,4153" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[vendLocate]" sap:VirtualizedContainerService.HintSize="1024,5812" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Sequence x:Key="1" sap:VirtualizedContainerService.HintSize="984,5585" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="found" />
                   <Variable x:TypeArguments="x:String" Name="foundQuantity" />
@@ -154,15 +160,15 @@
                     </InArgument>
                   </ui:ExcelReadRange.Range>
                 </ui:ExcelReadRange>
-                <ui:BuildDataTable DataTable="{x:Null}" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="942,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column1&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column2&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column1&gt;text&lt;/Column1&gt;&#xD;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,296" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Welcome to Early Bird Produce! Which product would you like to purchase?" OptionsString="Eggs;Sliced Bacon;Cinnamon Toast Crunch" Title="Purchase">
+                <ui:BuildDataTable DataTable="{x:Null}" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="942,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;text&lt;/Column1&gt;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,291" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Welcome to Early Bird Produce! Which product would you like to purchase?" OptionsString="Eggs;Sliced Bacon;Cinnamon Toast Crunch" Title="Purchase">
                   <ui:InputDialog.Result>
                     <OutArgument x:TypeArguments="x:String">[prodPurchase]</OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
-                <If Condition="[prodPurchase =&quot;Eggs&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_5">
+                <If Condition="[prodPurchase =&quot;Eggs&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_12">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -172,7 +178,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -182,9 +188,17 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_8">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costEggs" />
+                              <Variable x:TypeArguments="x:Double" Name="foundCost" />
+                              <Variable x:TypeArguments="x:Int32" Name="cost" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expEggs" />
+                              <Variable x:TypeArguments="x:Decimal" Name="decQuantAmount" />
+                              <Variable x:TypeArguments="x:Decimal" Name="variable1" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +213,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_14" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costEggs]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expEggs]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costEggs * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expEggs}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Early Bird Produce!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -209,9 +239,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Sliced Bacon&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_24">
+                <If Condition="[prodPurchase =&quot;Sliced Bacon&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_24">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_31">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -221,7 +251,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_16" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_16" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -231,9 +261,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_21">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_21">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costBacon" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expBacon" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -248,7 +282,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D3" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_5" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C3" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_15" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costBacon]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expBacon]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costBacon * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expBacon}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_2" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Early Bird Produce!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -258,9 +308,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Cinnamon Toast Crunch&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_26">
+                <If Condition="[prodPurchase =&quot;Cinnamon Toast Crunch&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_26">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_33">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -270,7 +320,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_18" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_18" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -280,9 +330,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_25">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_25">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costCTC" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expCTC" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -297,7 +351,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D4" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_21" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_6" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C4" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_16" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costCTC]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expCTC]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costCTC * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expCTC}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_3" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_21" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Early Bird Produce!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -308,7 +378,7 @@
                   </If.Then>
                 </If>
               </Sequence>
-              <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="984,4153" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence x:Key="2" sap:VirtualizedContainerService.HintSize="984,5585" sap2010:WorkflowViewState.IdRef="Sequence_16">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="found" />
                   <Variable x:TypeArguments="x:String" Name="foundQuantity" />
@@ -326,14 +396,14 @@
                   </ui:ExcelReadRange.Range>
                 </ui:ExcelReadRange>
                 <ui:BuildDataTable DataTable="{x:Null}" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="942,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;text&lt;/Column1&gt;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,296" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Welcome to The Entertainer! Which product would you like to purchase?" OptionsString="Fight Club;Zelda BOTW;Dark Side of the Moon Vinyl" Title="Purchase">
+                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,291" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="Welcome to The Entertainer! Which product would you like to purchase?" OptionsString="Fight Club;Zelda BOTW;Dark Side of the Moon Vinyl" Title="Purchase">
                   <ui:InputDialog.Result>
                     <OutArgument x:TypeArguments="x:String">[prodPurchase]</OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
-                <If Condition="[prodPurchase =&quot;Fight Club&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_10">
+                <If Condition="[prodPurchase =&quot;Fight Club&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -343,7 +413,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -353,9 +423,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_9">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costFC" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expFC" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -370,7 +444,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D6" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_11" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C6" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_17" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costFC]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expFC]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costFC * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expFC}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_12" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_8" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[prodPurchase + &quot; purchased! Thank you for shopping at The Entertainer!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -380,9 +470,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Zelda BOTW&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_28">
+                <If Condition="[prodPurchase =&quot;Zelda BOTW&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_28">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_35">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -392,7 +482,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_19" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_19" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -402,9 +492,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_27">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_27">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costZBOTW" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expZBOTW" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -419,7 +513,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D7" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_23" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_12" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C7" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_18" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costZBOTW]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expZBOTW]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costZBOTW * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expZBOTW}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_13" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_9" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_23" Text="[prodPurchase + &quot; purchased! Thank you for shopping at The Entertainer!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -429,9 +539,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Dark Side of the Moon Vinyl&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_30">
+                <If Condition="[prodPurchase =&quot;Dark Side of the Moon Vinyl&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_30">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_37">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -441,7 +551,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_20" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_20" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -451,9 +561,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_29">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_29">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costDSOTMV" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expDSOTMV" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -468,7 +582,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D8" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_7" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C8" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_19" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costDSOTMV]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expDSOTMV]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costDSOTMV * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expDSOTMV}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_4" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_25" Text="[prodPurchase + &quot; purchased! Thank you for shopping at The Entertainer!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -479,7 +609,7 @@
                   </If.Then>
                 </If>
               </Sequence>
-              <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="984,4153" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence x:Key="3" sap:VirtualizedContainerService.HintSize="984,5585" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Int32" Name="found" />
                   <Variable x:TypeArguments="x:String" Name="foundQuantity" />
@@ -497,14 +627,14 @@
                   </ui:ExcelReadRange.Range>
                 </ui:ExcelReadRange>
                 <ui:BuildDataTable DataTable="{x:Null}" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="942,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;text&lt;/Column1&gt;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,296" sap2010:WorkflowViewState.IdRef="InputDialog_12" IsPassword="False" Label="Welcome to Technotrocity! Which product would you like to purchase?" OptionsString="Samsung S9000;Tile Mate;Oculus Quest 2" Title="Purchase">
+                <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="942,291" sap2010:WorkflowViewState.IdRef="InputDialog_12" IsPassword="False" Label="Welcome to Technotrocity! Which product would you like to purchase?" OptionsString="Samsung S9000;Tile Mate;Oculus Quest 2" Title="Purchase">
                   <ui:InputDialog.Result>
                     <OutArgument x:TypeArguments="x:String">[prodPurchase]</OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
-                <If Condition="[prodPurchase =&quot;Samsung S9000&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_16">
+                <If Condition="[prodPurchase =&quot;Samsung S9000&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_16">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -514,7 +644,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_13" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_13" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -524,9 +654,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_15">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costSS9000" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expSS9000" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -541,7 +675,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D10" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_10" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C10" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_20" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costSS9000]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expSS9000]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costSS9000 * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expSS9000}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_7" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_11" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Technotrocity!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -551,9 +701,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Tile Mate&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_18">
+                <If Condition="[prodPurchase =&quot;Tile Mate&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_18">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_25">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -563,7 +713,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -573,9 +723,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_17">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_17">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costTM" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expTM" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -590,7 +744,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D11" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_9" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C11" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_21" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costTM]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expTM]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costTM * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expTM}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_6" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_13" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Technotrocity!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
@@ -600,9 +770,9 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If Condition="[prodPurchase =&quot;Oculus Quest 2&quot;]" sap:VirtualizedContainerService.HintSize="942,1149" sap2010:WorkflowViewState.IdRef="If_20">
+                <If Condition="[prodPurchase =&quot;Oculus Quest 2&quot;]" sap:VirtualizedContainerService.HintSize="942,1628" sap2010:WorkflowViewState.IdRef="If_20">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="797,1000" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <Sequence sap:VirtualizedContainerService.HintSize="797,1481" sap2010:WorkflowViewState.IdRef="Sequence_27">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="cellQuantity" />
                         <Variable x:TypeArguments="x:Double" Name="quantAmount" />
@@ -612,7 +782,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,242" sap2010:WorkflowViewState.IdRef="InputDialog_15" IsPassword="False" Label="How many would you like?" Title="Amount">
+                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="755,238" sap2010:WorkflowViewState.IdRef="InputDialog_15" IsPassword="False" Label="How many would you like?" Title="Amount">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:Double">[quantAmount]</OutArgument>
                         </ui:InputDialog.Result>
@@ -622,9 +792,13 @@
                           <OutArgument x:TypeArguments="x:Double">[cellQuantity]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,527" sap2010:WorkflowViewState.IdRef="If_19">
+                      <If Condition="[cellQuantity &gt; 0]" sap:VirtualizedContainerService.HintSize="755,1012" sap2010:WorkflowViewState.IdRef="If_19">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,378" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,865" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Decimal" Name="costOQ2" />
+                              <Variable x:TypeArguments="ui:GenericValue" Name="expOQ2" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -639,7 +813,23 @@
                               </Assign.Value>
                             </Assign>
                             <ui:ExcelWriteCell Cell="D12" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Vendors" Text="[cellQuantity.ToString]" />
-                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[prodPurchase + &quot; purchased! &quot;]" />
+                            <ui:BuildDataTable DataTable="[ExcelData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_8" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;ClientName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;ProductName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ProductQuantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalCost&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                            <ui:ExcelReadCell Cell="C12" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_22" SheetName="Vendors">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:Decimal">[costOQ2]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
+                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[expOQ2]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="ui:GenericValue">[costOQ2 * quantAmount]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{userName,prodPurchase,quantAmount,expOQ2}]" DataTable="[ExcelData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+                            <ui:ExcelAppendRange DataTable="[ExcelData]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_5" SheetName="Expenses" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[prodPurchase + &quot; purchased! Thank you for shopping at Technotrocity!&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
