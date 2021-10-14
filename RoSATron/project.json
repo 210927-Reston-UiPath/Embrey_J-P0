@@ -1,10 +1,9 @@
 {
   "name": "RoSATron",
-  "description": "This is RoSA and she loves to shop.",
-  "main": "Main.xaml",
+  "description": "This is RoSA, a bot to help you with your shopping needs.",
+  "main": "Welcome.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.5]",
-    "UiPath.GSuite.Activities": "[1.11.0]",
     "UiPath.Mail.Activities": "[1.9.5]",
     "UiPath.System.Activities": "[20.10.4]",
     "UiPath.UIAutomation.Activities": "[20.10.9]"
@@ -43,8 +42,14 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "9b74805d-0427-4acb-a6aa-a1bc2d3e49b5",
+      "filePath": "ProductSearch.xaml",
+      "uniqueId": "d8503285-6996-46e4-9664-f5008f576c1e",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Welcome.xaml",
+      "uniqueId": "742efa43-03a7-41ce-b9e8-b3a36de3f1f2",
       "input": [],
       "output": []
     }
